@@ -59,7 +59,7 @@ var articles={
 		            This is the content of my file.
 		        </p>`    
 			},
-	'article-three'  : {
+	'article-three' :{
 		title:'Article Three | bithal',
 		heading:'Article three',
 		date:'15th Sept 2016',
