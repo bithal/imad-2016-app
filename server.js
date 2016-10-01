@@ -11,83 +11,83 @@ var articles={
 		heading:'Article One',
 		date:'5th Sept 2016',
 		content:`
-		  
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		        </p>
-		    
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
-		        </p> 
+		        </p>
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
-		        </p>`    
+		        </p>`
 			},
 	'article-two' :{
 		title:'Article Two | bithal',
 		heading:'Article Two',
 		date:'10th Sept 2016',
 		content:`
-		  
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		        </p>
-		    
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		        </p>
-		    
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
-		        </p>`    
+		        </p>`
 			},
 	'article-three' :{
 		title:'Article Three | bithal',
 		heading:'Article three',
 		date:'15th Sept 2016',
 		content:`
-		  
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		        </p>
-		    
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		        </p>
-		    
+
 		        <p>
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
 		            This is the content of my file.This is the content of my file.
 		            This is the content of my file.
-		        </p>`    
+		        </p>`
 			}
 	};
-	
+
 
 function createTamplet(data){
 
@@ -97,14 +97,14 @@ function createTamplet(data){
 	var content=data.content;
 	var htmlTamplet=`
 		<html>
-		    
+
 		    <head>
 			<title>
-			    ${title}  
+			    ${title}
 			</title>
 			<meta name="viewport" content="width-device-width, initial-scal-1"/>
 			<link href="/ui/style.css" rel="stylesheet" />
-		       
+
 		    </head>
 		    <body>
 			<div class="container">
@@ -123,9 +123,9 @@ function createTamplet(data){
 			    </div>
 			</div>
 		    </body>
-		    
-		</html>`; 
-	return htmlTamplet;     
+
+		</html>`;
+	return htmlTamplet;
 }
 
 app.get('/', function (req, res) {
@@ -133,16 +133,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName',function (req, res){
-    var articleName = req.params.articleName; 
-    res.send(createTamplet(articles[articleName]));    
-       
+    var articleName = req.params.articleName;
+    res.send(createTamplet(articles[articleName]));
+
 });
- 
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
