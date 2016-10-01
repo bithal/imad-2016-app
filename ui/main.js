@@ -8,7 +8,7 @@ element.innerHTML="New Value";
 var img = document.getElementById("madi");
 var marginleft = 0;
 img.onclick=function () {
- var interval = setInterval(moveRight,100);
+ var interval = setInterval(moveRight,50);
  //img.style.marginLeft='100px';
 };
 
@@ -17,4 +17,3 @@ function moveRight(){
     marginleft = marginleft+10;
      img.style.marginLeft=marginleft+'px';
 }
-
